@@ -12,8 +12,9 @@ import javax.persistence.EntityManager;
 
 @DataSourceDefinition(
         name = "java:app/Payroll/MyDS",
-        className = "org.apache.derby.jdbc.ClientDriver",
+        className = "org.apache.derby.jdbc.ClientDataSource",
         url = "jdbc:derby://localhost:1527/payroll",
+        databaseName="payroll",
         user = "appuser",
         password = "password")
 @Stateless

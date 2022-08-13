@@ -10,7 +10,7 @@ import java.util.Set;
  *
  * @author airhacks.com
  */
-@ApplicationPath("api/v1") //https://foo.com/resources/payroll
+@ApplicationPath("api/v1") //https://foo.com/payroll/api/v1
 public class JAXRSConfiguration extends Application {
 //    @Override
 //    public Set<Class<?>> getClasses() {
