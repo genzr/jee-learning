@@ -17,11 +17,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -137,5 +139,11 @@ public class EmployeeResource {
         return Response.noContent().build();
     }
  
+    @DELETE
+    @Path("{id}")
+    public Response terminateEmployee(@PathParam("id") @NotNull Long id) {
+        logger.log(Level.INFO, "DELETE endpoint invoked");
+        return Response.ok().status(Response.Status.OK).build();
+    }
     
 }
