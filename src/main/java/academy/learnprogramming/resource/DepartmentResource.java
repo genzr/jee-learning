@@ -4,8 +4,11 @@
  */
 package academy.learnprogramming.resource;
 
+import academy.learnprogramming.config.MaxAge;
+import javax.validation.constraints.NotNull;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
@@ -22,4 +25,11 @@ public class DepartmentResource {
         return Response.ok().status(Response.Status.OK).build();
     }
     
+    @GET
+    @Path("{id}")
+    @Produces("application/json")
+    @MaxAge(age = 200)
+    public Response getDepartmentById(@PathParam("id") @NotNull Long id) {
+        return Response.ok().status(Response.Status.OK).build();
+    }
 }
